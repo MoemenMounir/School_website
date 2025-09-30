@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2c3e50">
+  <link rel="shortcut icon" href="images/school.jpg" type="image/x-icon" />
+  <title>السلام الثانوية العسكرية</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+  <img src="images/school.jpg" alt="صورة لموقع المدرسة">
+  <h1>السلام الثانوية</h1>
+</header>
+  
+  <nav class="navbar">
+    <div class="logo">المجلة المدرسية</div>
+
+    <!-- زرار البرجر -->
+    <div class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">☰</div>
+
+    <!-- اللينكات -->
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="news.html">الأخبار</a></li>
+      <li><a href="about.html">عنا</a></li>
+      <li><a href="contact.html">تواصل معنا</a></li>
+    </ul>
+  </nav>
+
+  <!-- تفاصيل المقال -->
+  <main id="article-content">
+    <!-- المقال هيظهر هنا بالـ JS -->
+  </main>
+  
+  <footer>
+    <h3 dir="ltr">
+      &lt; Developed By &gt;
+      <a href="https://www.facebook.com/moemen.mounir.56/">Moemen</a>
+    </h3>
+    <h4>&lt; All Copy Rights Reserved @2025 &gt;</h4>
+  </footer>
+
+  <!-- سكربتات -->
+  <script src="article.js"></script>
+  <script>
+  const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+  </script>
+</body>
+</html>

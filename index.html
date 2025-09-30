@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport , " content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2c3e50">
+  <link rel="shortcut icon" href="images/school.jpg" type="image/x-icon" />
+  <title>السلام الثانوية العسكرية</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <img src="images/school.jpg" alt="صورة لموقع المدرسة">
+    <h1>السلام الثانوية</h1>
+  </header>
+  
+  <nav class="navbar">
+    <div class="logo">المجلة المدرسية</div>
+    
+    <!-- زرار البرجر -->
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+    
+    <!-- اللينكات -->
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="news.html">الأخبار</a></li>
+      <li><a href="about.html">عنا</a></li>
+      <li><a href="contact.html">تواصل معنا</a></li>
+    </ul>
+  </nav>
+  
+  <main id="home">
+    <img src="images/icon.jpg" alt="صورة للموقع">
+    <h1>اهلا بكم في الصفحة الرسمية لمدرسة السلام الثانوية العسكرية بنين ، حيث يمكنك متابعة اخبار المدرسة لحظة بلحظة.</h1>
+    <br>
+    <p>يمكنك بداية متابعة الأخبار من هنا
+    </p>
+    <br>
+    <a href="news.html">اضغط هنا لمعرفة اجدد الأخبار</a>
+  </main>
+  
+  <footer>
+    <h3 dir="ltr">
+      < Developed By>
+        <a href="https://www.facebook.com/moemen.mounir.56/"> Moemen </a>
+    </h3>
+    <br>
+    <h4>
+      < All Copy Rights Reserved @2025>
+    </h4>
+  </footer>
+  
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+  </script>
+</body>
+
+</html>

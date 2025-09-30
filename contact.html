@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport , " content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2c3e50">
+  <link rel="shortcut icon" href="images/school.jpg" type="image/x-icon" />
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+   (function(){
+       emailjs.init("7pxT6DXG6sPRhhuAn"); // الـ Public Key بتاعك
+   })();
+</script>
+  <title>السلام الثانوية العسكرية</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+  <img src="images/school.jpg" alt="صورة لموقع المدرسة">
+  <h1>السلام الثانوية</h1>
+</header>
+  
+  <nav class="navbar">
+    <div class="logo">المجلة المدرسية</div>
+    
+    <!-- زرار البرجر -->
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+    
+    <!-- اللينكات -->
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="news.html">الأخبار</a></li>
+      <li><a href="about.html">عنا</a></li>
+      <li><a href="contact.html">تواصل معنا</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    
+    <form id="contact-form">
+  <label for="name">الأسم :</label><br>
+  <input type="text" id="name" name="name" placeholder="اسمك ثلاثي ..." required><br><br>
+  <label for="email">الإيميل :</label><br>
+  <input type="email" id="email" name="email" placeholder="إيميلك ..." required><br><br>
+  <label for="number">رقم الهاتف :</label><br>
+  <input type="number" id="phone" name="phone" placeholder="رقم هاتفك ..." required><br><br>
+  <label for="message">ىسالتك :</label><br>
+  <textarea name="message"  
+  id="message"
+  placeholder="اكتب رسالتك ..." required></textarea><br><br>
+  <br>
+<button type="submit" id="submit">ابعت</button>
+</form>
+    
+  </main>
+  
+  <footer>
+    <h3 dir="ltr">
+      < Developed By>
+        <a href="https://www.facebook.com/moemen.mounir.56/"> Moemen </a>
+    </h3>
+    <br>
+    <h4>
+      < All Copy Rights Reserved @2025>
+    </h4>
+  </footer>
+  
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+    
+    const form = document.getElementById('contact-form');
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm('service_wrn2f4s', 'template_wv8a6zh', this)
+    .then(function() {
+        alert('تم ارسال الرسالة بنجاح!');
+        form.reset();
+    }, function(error) {
+        alert('في خطأ، حاول تاني: ' + JSON.stringify(error));
+    });
+});
+    
+  </script>
+</body>
+
+</html>
