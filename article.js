@@ -17,6 +17,7 @@ fetch("https://raw.githubusercontent.com/MoemenMounir/School_website_data/main/a
         <p><strong>التاريخ:</strong> ${article.date}</p>
         <hr>
         <p>${article.content}</p>
+        <img src ="${article.image}" width="70%">
       `;
 
       // إضافة الفيديو لو موجود
