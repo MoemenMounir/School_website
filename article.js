@@ -2,7 +2,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const articleId = urlParams.get("id");
 // تحميل المقالات من JSON
-fetch("articles.json")
+fetch("https://raw.githubusercontent.com/MoemenMounir/School_website_data/refs/heads/main/articles.json")
   .then(response => response.json())
   .then(data => {
     const article = data.find(a => a.id == articleId);
