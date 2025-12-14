@@ -1,7 +1,7 @@
 let articles = []; // متغير عام هنخزن فيه المقالات
 
 // تحميل المقالات من JSON
-fetch("articles.json")
+fetch("https://raw.githubusercontent.com/MoemenMounir/School_website_data/main/articles.json")
   .then(response => response.json())
   .then(data => {
     articles = data; // نخزن البيانات هنا
