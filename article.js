@@ -12,7 +12,7 @@ fetch("https://raw.githubusercontent.com/MoemenMounir/School_website_data/main/a
     if (article) {
       let html = `
         <h1>${article.title}</h1>
-        <img src ="${article.image}" width="70%">
+        <img src ="${article.image}" width="35%">
         <p><strong>الكاتب:</strong> ${article.author}</p>
         <p><strong>التاريخ:</strong> ${article.date}</p>
         <hr>
