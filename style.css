@@ -30,31 +30,33 @@ header {
   color: white;
   padding: 1rem;
   text-align: center;
-  img {
-    width: 15%;
-    float: left;
-  }
-  h1 {
-    padding-top: 3%;
-  }
+}
+header img {
+  width: 15%;
+  float: left;
+}
+header h1 {
+  padding-top: 3%;
 }
 
 #home {
-  img{
-    width: 100%;
-    height: auto;
-  }
   text-align: left;
-  a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    background-color: green;
-    border: black solid 5px;
-    text-align: center;
-    font-size: clamp(18px, 3vw, 50px);
-  }
-  a:hover {background-color: darkgreen;}
+}
+#home img {
+  width: 100%;
+  height: auto;
+}
+#home a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  background-color: green;
+  border: black solid 5px;
+  text-align: center;
+  font-size: clamp(18px, 3vw, 50px);
+}
+#home a:hover {
+  background-color: darkgreen;
 }
 
 #about {
@@ -73,7 +75,7 @@ header {
 #about div ul {
   list-style: none;
   display: flex;
-  justify-content: space-around; /* توزيع على عرض الشاشة */
+  justify-content: space-around;
   align-items: center;
   padding: 0;
   margin: 20px 0;
@@ -81,25 +83,24 @@ header {
 }
 
 #about div ul li {
-  flex: 1; /* كل لينك ياخد مساحة متساوية */
+  flex: 1;
   text-align: center;
 }
 
 #about div ul li a img {
-  max-width: 80px;  /* كبرنا الأيقونة */
+  max-width: 80px;
   width: 100%;
   height: auto;
   transition: transform 0.3s ease;
 }
 
 #about div ul li a img:hover {
-  transform: scale(1.25); /* تكبير عند المرور */
+  transform: scale(1.25);
 }
 
-/* عشان الموبايل */
 @media (max-width: 500px) {
   #about div ul li a img {
-    max-width: 60px; /* تصغير شوية في الشاشات الصغيرة */
+    max-width: 60px;
   }
 }
 
@@ -117,7 +118,6 @@ header {
   font-weight: bold;
 }
 
-/* اللينكات */
 .nav-links {
   list-style: none;
   display: flex;
@@ -127,31 +127,23 @@ header {
 .nav-links li a {
   color: white;
   text-decoration: none;
-  font-size: clamp(16px, 2.5vw, 22px);
+  font-size: clamp(18px, 4vw, 25px);
   padding: 8px 12px;
+  padding-left: 86px;
   border-radius: 5px;
   transition: background 0.3s ease;
-  font-size: clamp(18px, 4vw, 25px);
-  padding-left: 86px;
 }
 
 .nav-links li a:hover {
   background: #555;
 }
 
-/* زرار البرجر */
 .menu-toggle {
   display: none;
   font-size: 28px;
   cursor: pointer;
-  transition: transform 0.3s ease;
 }
 
-.menu-toggle:hover {
-  transform: scale(1.1);
-}
-
-/* 📱 شاشة صغيرة */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -180,7 +172,6 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  direction: rtl;
 }
 
 #searchInput {
@@ -213,7 +204,14 @@ main {
   padding: 10%;
 }
 
+/* ✅ الحل هنا */
+#articles-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .article-card {
+  order: 1;
   background: antiquewhite;
   padding: 1rem;
   margin: 1rem 0;
@@ -229,7 +227,6 @@ main {
 .article-card a {
   color: #2980b9;
   text-decoration: none;
-  transition: color 0.3s ease;
   font-size: 35px;
 }
 
@@ -238,61 +235,8 @@ main {
   color: #1f6699;
 }
 
-form {
-    border: black 7px solid;
-    border-radius: 15px;
-    padding: 20px;
-    text-align: right;
-    font-size: clamp(18px, 3vw, 50px);
-    background-color: gainsboro;
-    width: 100%;
-    #name ,#email ,#phone , #price ,#items {border : 3px black solid;
-      border-radius: 15px;
-      width: 100%;
-      block-size: 70px;
-      background-color: aliceblue;
-    }
-    #name:hover ,#email:hover ,#phone:hover ,#message:hover {background-color: powderblue;}
-    #message
-    {width : 100%;
-     height: auto;
-     border-radius: 15px;
-     border: black solid 3px;
-     background-color: aliceblue;
-     font-size: clamp(18px, 3vw, 50px);
-     block-size: 150px;
-    }
-    
-    #submit {
-      display: block;
-      width: 100%;
-      background-color: green;
-      color: white;
-      border: black solid 3px;
-      border-radius: 15px;
-      font-size: clamp(18px, 3vw, 50px);
-    }   
-    #submit:hover {background-color: darkgreen;}
-    label {
-    font-size: clamp(18px, 3vw, 50px);
-    }
-    ::placeholder {
-      font-size: clamp(18px, 3vw, 50px);
-    }
- }
- 
- #h1
-  {
-    text-align: center;
-    font-size: clamp(18px, 3vw, 50px);
-  }
-  #p
-  {
-    text-align: center;
-    font-size: clamp(18px, 3vw, 50px);
-  }
-
 #load-more {
+  order: 2;
   margin: 20px auto;
   padding: 6px 16px;
   font-size: 14px;
@@ -329,7 +273,6 @@ footer a {
   background-color: dimgray;
   border-radius: 10px;
   padding: 5px 10px;
-  transition: background 0.3s ease;
 }
 
 footer a:hover {
