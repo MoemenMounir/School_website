@@ -12,7 +12,7 @@ fetch("https://raw.githubusercontent.com/MoemenMounir/School_website_data/main/a
   .then(response => response.json())
   .then(data => {
     articles = data;
-    displayNextArticles(); // نعرض أول 3 بس
+    displayNextArticles(); // عرض أول 3 مقالات فقط
   })
   .catch(error => console.error("خطأ في تحميل المقالات:", error));
 
@@ -35,14 +35,25 @@ function displayArticles(list) {
   });
 }
 
-// عرض 3 مقالات كل مرة
+// دالة عرض 3 مقالات كل مرة
 function displayNextArticles() {
   const container = document.getElementById("articles-container");
   const nextArticles = articles.slice(currentIndex, currentIndex + articlesPerPage);
 
+  // إزالة الزرار مؤقتًا
+  if (loadMoreBtn.parentNode) {
+    loadMoreBtn.remove();
+  }
+
+  // إضافة المقالات
   displayArticles(nextArticles);
+
+  // إعادة الزرار أسفل المقالات
+  container.appendChild(loadMoreBtn);
+
   currentIndex += articlesPerPage;
 
+  // إخفاء الزرار عند انتهاء المقالات
   if (currentIndex >= articles.length) {
     loadMoreBtn.style.display = "none";
   }
@@ -50,7 +61,6 @@ function displayNextArticles() {
 
 // ربط الزرار
 loadMoreBtn.onclick = displayNextArticles;
-document.getElementById("articles-container").after(loadMoreBtn);
 
 // البحث
 document.getElementById("searchInput").addEventListener("input", function () {
