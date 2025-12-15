@@ -204,14 +204,7 @@ main {
   padding: 10%;
 }
 
-/* ✅ الحل هنا */
-#articles-container {
-  display: flex;
-  flex-direction: column;
-}
-
 .article-card {
-  order: 1;
   background: antiquewhite;
   padding: 1rem;
   margin: 1rem 0;
@@ -235,8 +228,62 @@ main {
   color: #1f6699;
 }
 
+form {
+    border: black 7px solid;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: right;
+    font-size: clamp(18px, 3vw, 50px);
+    background-color: gainsboro;
+    width: 100%;
+}
+form #name, #email, #phone, #price, #items {
+    border: 3px black solid;
+    border-radius: 15px;
+    width: 100%;
+    block-size: 70px;
+    background-color: aliceblue;
+}
+form #name:hover, form #email:hover, form #phone:hover, form #message:hover {
+    background-color: powderblue;
+}
+form #message {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border: black solid 3px;
+    background-color: aliceblue;
+    font-size: clamp(18px, 3vw, 50px);
+    block-size: 150px;
+}
+form #submit {
+    display: block;
+    width: 100%;
+    background-color: green;
+    color: white;
+    border: black solid 3px;
+    border-radius: 15px;
+    font-size: clamp(18px, 3vw, 50px);
+}   
+form #submit:hover {background-color: darkgreen;}
+form label {
+    font-size: clamp(18px, 3vw, 50px);
+}
+form ::placeholder {
+    font-size: clamp(18px, 3vw, 50px);
+}
+
+#h1 {
+  text-align: center;
+  font-size: clamp(18px, 3vw, 50px);
+}
+
+#p {
+  text-align: center;
+  font-size: clamp(18px, 3vw, 50px);
+}
+
 #load-more {
-  order: 2;
   margin: 20px auto;
   padding: 6px 16px;
   font-size: 14px;
@@ -277,4 +324,10 @@ footer a {
 
 footer a:hover {
   background-color: #555;
+}
+
+/* === التعديل الوحيد لزرار عرض المزيد يظهر تحت المقالات === */
+#articles-container {
+  display: flex;
+  flex-direction: column;
 }
