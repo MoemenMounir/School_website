@@ -50,7 +50,7 @@ function displayNextArticles() {
 
 // ربط الزرار
 loadMoreBtn.onclick = displayNextArticles;
-document.getElementById("articles-container").appendChild(loadMoreBtn);
+document.getElementById("articles-container").after(loadMoreBtn);
 
 // البحث
 document.getElementById("searchInput").addEventListener("input", function () {
