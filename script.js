@@ -24,12 +24,16 @@ function displayArticles(list) {
     const card = document.createElement("div");
     card.className = "article-card";
 
-    card.innerHTML = `
-      <h2>${article.title}</h2>
-      <img src="${article.image}" width="35%">
-      <p><strong>الكاتب:</strong> ${article.author} | <strong>التاريخ:</strong> ${article.date}</p>
-      <a href="article.html?id=${article.id}" id="aa">اقرأ المزيد</a>
-    `;
+    const imgSrc = Array.isArray(article.image)
+  ? article.image[0]
+  : article.image;
+
+card.innerHTML = `
+  <h2>${article.title}</h2>
+  <img src="${imgSrc}" width="35%">
+  <p><strong>الكاتب:</strong> ${article.author} | <strong>التاريخ:</strong> ${article.date}</p>
+  <a href="article.html?id=${article.id}" id="aa">اقرأ المزيد</a>
+`;
 
     container.appendChild(card);
   });
